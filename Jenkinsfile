@@ -9,7 +9,7 @@ pipeline{
                 stage('ZIPEO-NEXUS'){
                     agent any
                     steps{
-                        checkout([$class: 'GitSCM', branches: [[name: 'master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'jacky', url: 'https://bitbucket.org/ekergy/fintools.git']]])
+                        checkout([$class: 'GitSCM', branches: [[name: 'master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'jacky', url: 'https://github.com/jacky9595/pipeline-jacky.git']]])
                         sh 'mvn clean install'
                     }
                 }
