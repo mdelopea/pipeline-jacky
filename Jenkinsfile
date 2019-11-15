@@ -11,6 +11,7 @@ pipeline{
                     steps{
                         checkout([$class: 'GitSCM', branches: [[name: 'master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'MarcosGit', url: 'git@github.com:mdelopea/nexusjacky.git']]])
                         sh 'mvn clean install'
+                        sh 'mvn deploy -DskipTests -Dmaven.install.skip=true'
                     }
                 }
 
