@@ -37,9 +37,9 @@ pipeline{
         changed {
             echo 'This will run only if the state of the Pipeline has changed'
         }
-//       cleanup{
-//                 deleteDir()
-//         }
+       cleanup{
+                 deleteDir()
+         }
     }
 }
 
