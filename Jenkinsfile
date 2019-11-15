@@ -9,7 +9,7 @@ pipeline{
                 stage('ZIPEO-NEXUS'){
                     agent any
                     steps{
-                        checkout([$class: 'GitSCM', branches: [[name: 'master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'jacky', url: 'https://github.com/jacky9595/jenkins-nexus.git']]])
+                        checkout([$class: 'GitSCM', branches: [[name: 'master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'MarcosGit', url: 'git@github.com:mdelopea/nexusjacky.git']]])
                         sh 'mvn clean install'
                     }
                 }
